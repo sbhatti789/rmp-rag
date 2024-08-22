@@ -1,0 +1,126 @@
+
+{
+    "reviews": [
+      {
+        "professor": "Dr. Emily Johnson",
+        "subject": "Computer Science",
+        "stars": 5,
+        "review": "Dr. Johnson is amazing! Her lectures are clear and she really cares about her students."
+      },
+      {
+        "professor": "Professor Mark Davis",
+        "subject": "Mathematics",
+        "stars": 4,
+        "review": "Great professor, but the exams are really tough. Pay attention in class!"
+      },
+      {
+        "professor": "Dr. Sarah Thompson",
+        "subject": "Physics",
+        "stars": 3,
+        "review": "Lectures can be dry, but she knows her stuff. Office hours are helpful."
+      },
+      {
+        "professor": "Professor James Lee",
+        "subject": "Chemistry",
+        "stars": 2,
+        "review": "Not the best at explaining concepts, but the textbook covers everything."
+      },
+      {
+        "professor": "Dr. Rachel Miller",
+        "subject": "Biology",
+        "stars": 5,
+        "review": "Very passionate about biology. Her enthusiasm makes the subject interesting."
+      },
+      {
+        "professor": "Professor David Wilson",
+        "subject": "History",
+        "stars": 4,
+        "review": "Interesting lectures, but make sure to do the readings or you'll get lost."
+      },
+      {
+        "professor": "Dr. Olivia Brown",
+        "subject": "Psychology",
+        "stars": 5,
+        "review": "One of the best professors I've ever had. She makes complex topics easy to understand."
+      },
+      {
+        "professor": "Professor Michael Clark",
+        "subject": "Philosophy",
+        "stars": 3,
+        "review": "Philosophy isn't for everyone, and his teaching style is very traditional."
+      },
+      {
+        "professor": "Dr. Laura Garcia",
+        "subject": "Economics",
+        "stars": 4,
+        "review": "Solid professor, but sometimes goes too fast during lectures. Ask questions!"
+      },
+      {
+        "professor": "Professor Robert Martinez",
+        "subject": "Sociology",
+        "stars": 5,
+        "review": "Very engaging and always encourages class discussions. You'll learn a lot."
+      },
+      {
+        "professor": "Dr. Anthony White",
+        "subject": "Political Science",
+        "stars": 4,
+        "review": "Insightful lectures and a fair grader. Just keep up with the readings."
+      },
+      {
+        "professor": "Professor Linda Harris",
+        "subject": "Art History",
+        "stars": 2,
+        "review": "Her slides are informative, but she reads directly from them. Not very engaging."
+      },
+      {
+        "professor": "Dr. Daniel Nguyen",
+        "subject": "Computer Engineering",
+        "stars": 5,
+        "review": "Brilliant professor. He challenges you, but you'll come out with a deep understanding."
+      },
+      {
+        "professor": "Professor Karen Thompson",
+        "subject": "English Literature",
+        "stars": 3,
+        "review": "Not a bad professor, but she grades essays pretty harshly. Be prepared to rewrite."
+      },
+      {
+        "professor": "Dr. William Johnson",
+        "subject": "Environmental Science",
+        "stars": 4,
+        "review": "Knowledgeable and approachable. The class is a bit demanding, but worth it."
+      },
+      {
+        "professor": "Professor Jessica Taylor",
+        "subject": "Statistics",
+        "stars": 2,
+        "review": "The material is difficult, and her explanations can be confusing. Attend every class."
+      },
+      {
+        "professor": "Dr. John Anderson",
+        "subject": "Anthropology",
+        "stars": 5,
+        "review": "Fascinating lectures and very supportive during fieldwork. Highly recommend."
+      },
+      {
+        "professor": "Professor Angela Robinson",
+        "subject": "Linguistics",
+        "stars": 4,
+        "review": "She makes linguistics accessible, even for beginners. Pay attention to the details."
+      },
+      {
+        "professor": "Dr. Charles Evans",
+        "subject": "Geography",
+        "stars": 3,
+        "review": "Average professor, but the content is interesting. Class is mostly lecture-based."
+      },
+      {
+        "professor": "Professor Brenda King",
+        "subject": "Music Theory",
+        "stars": 5,
+        "review": "She has a deep passion for music and it shows. Very inspiring professor."
+      }
+    ]
+  }
+  
