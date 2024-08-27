@@ -1,12 +1,8 @@
 "use client"
-// Import necessary components from Material UI and React
-import { Box, Stack, TextField, Button } from "@mui/material";
-import Image from "next/image";
+import { Box, Stack, TextField, Button, Typography, AppBar, Toolbar } from "@mui/material";
 import { useState } from "react";
 
-// Main Home component
 export default function Home() {
-  // State to manage the conversation messages
   const [messages, setMessages] = useState([
     {
       role: "assistant",
@@ -14,22 +10,17 @@ export default function Home() {
     }
   ]);
 
-  // State to manage the current message input
   const [message, setMessage] = useState('');
 
-  // Function to handle sending a message
   const sendMessage = async () => {
-    // Add the user's message and an empty assistant message to the messages state
     setMessages((messages) => [
       ...messages,
       { role: "user", content: message },
       { role: "assistant", content: '' }
     ]);
 
-    // Clear the input field
     setMessage('');
 
-    // Send the user's message to the server
     const response = fetch('/api/chat', {
       method: "POST",
       headers: {
@@ -42,7 +33,6 @@ export default function Home() {
 
       let result = '';
 
-      // Read the response from the server and update the assistant's message
       return reader.read().then(function processText({ done, value }) {
         if (done) {
           return result;
@@ -62,75 +52,124 @@ export default function Home() {
     });
   }
 
-  // Render the chat interface
   return (
     <Box
       width="100vw"
       height="100vh"
       display="flex"
       flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
+      bgcolor="#f0f2f5"
     >
-      {/* Main chat container */}
-      <Stack
-        direction="column"
-        width="500px"
-        height="700px"
-        border="1px solid black"
-        p={2}
-        spacing={3}
-      >
-        {/* Message display area */}
-        <Stack
-          direction="column"
-          spacing={2}
-          flexGrow={1}
-          overflow={'auto'}
-          maxHeight={'100%'}
-        >
-          {messages.map((message, index) => (
-            <Box
-              key={index}
-              display="flex"
-              justifyContent={
-                message.role === 'assistant' ? 'flex-start' : 'flex-end'
-              }
-            >
-              <Box
-                bgcolor={
-                  message.role === 'assistant' ? 'primary.main' : 'secondary.main'
-                }
-                color="white"
-                borderRadius={36}
-                p={3}
-              >
-                {message.content}
-              </Box>
-            </Box>
-          ))}
-        </Stack>
+      {/* Top Bar */}
+      <AppBar position="static" color="primary">
+        <Toolbar>
+        <Box 
+  width="100%" 
+  display="flex" 
+  justifyContent="center" 
+  alignItems="center" 
+  mb={2}
+>
+  <Typography variant="h6" component="div">
+    RATE MY PROFESSOR APPLICATION
+  </Typography>
+</Box>
 
-        {/* Message input area */}
-        <Stack
-          direction="row"
-          spacing={2}
+        </Toolbar>
+      </AppBar>
+
+      {/* Main Content Area */}
+      <Box display="flex" flexGrow={1}>
+        {/* Sidebar Description */}
+        <Box
+          width="250px"
+          bgcolor="#1976d2"
+          color="white"
+          p={2}
         >
-          {/* Input field for the user's message */}
-          <TextField
-            label="Message"
-            fullWidth
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
-          />
-          {/* Send button */}
-          <Button variant='contained' onClick={sendMessage}>
-            Send
-          </Button>
-        </Stack>
-      </Stack>
+          <Typography variant="h6" gutterBottom>
+            AI Chat Capabilities
+          </Typography>
+          <Typography variant="body1">
+            - Find top professors based on your query
+            </Typography>
+            <Typography variant="body1">
+            - Get detailed professor ratings
+            </Typography>
+            <Typography variant="body1">
+            - Receive quick support for your inquiries
+          </Typography>
+        </Box>
+
+        {/* Chat Area */}
+        <Box
+          display="flex"
+          flexDirection="column"
+          flexGrow={1}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Stack
+            direction="column"
+            width="500px"
+            height="700px"
+            border="1px solid #ddd"
+            borderRadius={8}
+            bgcolor="white"
+            p={2}
+            spacing={3}
+            boxShadow="0px 4px 12px rgba(0, 0, 0, 0.1)"
+          >
+            {/* Message Display Area */}
+            <Stack
+              direction="column"
+              spacing={2}
+              flexGrow={1}
+              overflow="auto"
+              maxHeight="100%"
+            >
+              {messages.map((message, index) => (
+                <Box
+                  key={index}
+                  display="flex"
+                  justifyContent={
+                    message.role === 'assistant' ? 'flex-start' : 'flex-end'
+                  }
+                >
+                  <Box
+                    bgcolor={
+                      message.role === 'assistant' ? '#e3f2fd' : '#bbdefb'
+                    }
+                    color="black"
+                    borderRadius={16}
+                    p={2}
+                    boxShadow="0px 2px 8px rgba(0, 0, 0, 0.1)"
+                  >
+                    {message.content}
+                  </Box>
+                </Box>
+              ))}
+            </Stack>
+
+            {/* Message Input Area */}
+            <Stack
+              direction="row"
+              spacing={2}
+            >
+              <TextField
+                label="Message"
+                fullWidth
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                variant="outlined"
+              />
+              <Button variant="contained" color="primary" onClick={sendMessage}>
+                Send
+              </Button>
+            </Stack>
+          </Stack>
+        </Box>
+      </Box>
     </Box>
   );
 }
